@@ -37,8 +37,8 @@ All files are formatted according to Betty style, checked with betty-style.pl an
 All header files are protected
 
 ## Authors
+---
 Jhonatan Jauja | [GitHub](https://github.com/jhonnjc15)
-
--
- 
+---
 Piero Gomez | [GitHub](https://github.com/pgomezboza)
+---
