@@ -7,20 +7,20 @@
 ---
 File|Task
 ---|---
-AUTHORS | File with all the people who have contributed to the content of the repository. 
-counter_commands.c |
-doub_pointer_comm.c |
-error_msg.c |
-exec_path_direct.c | 
-free_double_pointer.c |
-get_enviro.c |
-help_funct_strings.c |
-main.c |
-man_1_simple_shell |
-print_enviro.c |
-README.md |
-shell.h |
-signal.c |
+AUTHORS | File with all the people who have contributed to the content of the repository
+counter_commands.c | finds the number of commands
+doub_pointer_comm.c | creates a double-pointer array that holders pointers
+error_msg.c | prints error messages for certain fails
+exec_path_direct.c | creates a double pointer array of all your directories
+free_double_pointer.c | frees double pointers (user's command, arrays)
+get_enviro.c | finds and returns a copy of the environment variable
+help_funct_strings.c | contains the string handling functions
+main.c | hold entrance into the program
+man_1_simple_shell | the manual page for our simple shell program
+print_enviro.c | prints all of the environment variables to the output
+README.md | description about the content and functionality of the project
+shell.h | header with libraries and prototypes
+signal.c | handles signals and write the prompt
 
 Directory Name | Description
 ---|---
