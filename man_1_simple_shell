@@ -18,6 +18,52 @@ simple_shell is desgined to run on the linux environment.
 .SH OVERVIEW
 Reading from either the terminal or files, simple_shell interprets and executes commands.
 
+.SH RETURN VALUE
+The shell returns the error code given by the last completed command followed by either ctrl-d or exit with no status code.
+
+.SH SYNTAX
+$ <command> <flags or options> <argument 1> <argument 2> ...
+
+.SH INVOCATION
+Compile simple_shell with the GNU Compiler Collection, preferably using gcc plus the below specified flags, 
+as per this example (note the use of the * wildcard which enables all related .c files to be compiled concurrently):
+.P
+.RS
+.B $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.P
+.RE
+simple_shell can be run in interactive mode by entering the below command on the command line followd by "enter." 
+Note that the prompt ('$') will appear and you will then be in interactive mode and able to enter commands followed by "enter." 
+.P
+.RS
+.B $ ./hsh
+.P
+.RE
+simple_shell can be run in non-interactive mode through the use of shell scripts. This can involve the use of piping ('|'):
+.P
+.RS
+.B echo 'pwd' | ./hsh
+
+.SS
+EXAMPLE 1:
+$ /bin/ls
+.SS
+EXAMPLE 2:
+$ ls -l
+.SS
+EXAMPLE 3:
+$ cat textfile
+.SS
+EXAMPLE 4:
+$ echo "ls -l" | ./hsh
+
+.SH BUILTINS
+.SS env
+- list the current environment variable
+
+.SS exit
+- exit from shell
+
 .SH BUGS
 No known bugs at this writing (April 13, 2021).
 Please report any issues to the authors.
