@@ -10,7 +10,9 @@
 #include <sys/stat.h>
 #include <signal.h>
 
-void ch_exec(char **cmds, char *buff, struct stat fs, char **env, char **argv);
+//void ch_exec(char **cmds, char *buff, struct stat fs, char **env, char **argv);
+void child_exec(char **commands, char *buffer
+			,struct stat fileStat, char **env, char **argv);
 void parent_exec(char **commands, char *buffer);
 
 int num_commands_sep(char *string, char sep);
@@ -32,4 +34,4 @@ void error_message(char **av);
 
 void path_exec(char **commands, char *buffer, char **env, char **argv);
 
-#endif /* _HOLBERTON_H_ */
+#endif /* _SHELL_H_ */
