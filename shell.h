@@ -34,4 +34,6 @@ void error_message(char **av);
 
 void path_exec(char **commands, char *buffer, char **env, char **argv);
 
+
+void handler(int num);
 #endif /* _SHELL_H_ */

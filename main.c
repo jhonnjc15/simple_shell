@@ -20,10 +20,13 @@ int main(int argc, char **argv, char **env)
 	struct stat fileStat;
 	(void)argc;
 
-	if (isatty(STDIN_FILENO))
-		write(STDOUT_FILENO, "$ ", 2);
+	/* Interrupt the process */
+	signal(SIGINT, handler);	
+
 	while (1)
 	{
+		if (isatty(STDIN_FILENO))
+			write(STDOUT_FILENO, "$ ", 2);
 		characters = getline(&buffer, &length, stdin);
 		if (characters == EOF)
 		{
@@ -44,8 +47,6 @@ int main(int argc, char **argv, char **env)
 			parent_exec(commands, buffer);
 		length = 0;
 		buffer = NULL;
-		if (isatty(STDIN_FILENO))
-			write(STDOUT_FILENO, "$ ", 2);
 	}
 	return (EXIT_SUCCESS);
 }
@@ -60,7 +61,7 @@ int main(int argc, char **argv, char **env)
  * Return: 0 on exit, 1 if any failures happen
  */
 void child_exec(char **commands, char *buffer
-				 ,struct stat fileStat, char **env, char **argv)
+				, struct stat fileStat, char **env, char **argv)
 {
 	if (commands == NULL)
 	{
@@ -101,7 +102,7 @@ void parent_exec(char **commands, char *buffer)
 	wait(NULL);
 	if (commands == NULL)
 	{
-	free(buffer);
+		free(buffer);
 		free_double_pointer(commands);
 	}
 	else if (_strcmp("exit", commands[0]))
