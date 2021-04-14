@@ -99,7 +99,9 @@ void child_exec(char **commands, char *buffer
  */
 void parent_exec(char **commands, char *buffer)
 {
-	wait(NULL);
+	int j;
+
+	wait(&j);
 	if (commands == NULL)
 	{
 		free(buffer);
