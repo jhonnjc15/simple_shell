@@ -21,7 +21,7 @@ int main(int argc, char **argv, char **env)
 	(void)argc;
 
 	/* Interrupt the process */
-	signal(SIGINT, handler);	
+	signal(SIGINT, handler);
 
 	while (1)
 	{
