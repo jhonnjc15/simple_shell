@@ -30,7 +30,5 @@ void path_exec(char **commands, char *buffer, char **env, char **argv)
 	free(buffer);
 	free_double_pointer(commands);
 	free_double_pointer(all_directories);
-	exit(EXIT_SUCCESS);
+	exit(EXIT_FAILURE);
 }
-
-
